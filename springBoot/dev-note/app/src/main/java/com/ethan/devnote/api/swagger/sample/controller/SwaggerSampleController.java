@@ -9,7 +9,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.http.MediaType.*;
 
 @RestController
 @RequestMapping("/api/v1/swagger")
@@ -73,20 +76,13 @@ public class SwaggerSampleController {
         return token;
     }
 
-    @Operation(
-            summary = "Post 예제",
-            description = "Post 예제입니다.",
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
-                description = "Request Body 예제 ",
-                content = @Content(
-                        mediaType = "application/json",
-                        schema = @Schema(implementation = SwaggerRequestBodyVO.class)
-                )
-            )
-    )
+    @Operation(summary = "Post 예제", description = "Post 예제입니다.")
     @ApiResponses(value = @ApiResponse(responseCode = "200", description = "고정 값 success"))
-    @PostMapping("/")
-    public SwaggerRequestBodyVO post(@RequestBody SwaggerRequestBodyVO body){
+    @PostMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public SwaggerRequestBodyVO post(
+            @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Request Body 예제")
+            @RequestBody SwaggerRequestBodyVO body
+    ){
         return body;
     }
 }

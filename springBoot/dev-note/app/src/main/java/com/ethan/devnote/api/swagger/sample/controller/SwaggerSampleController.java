@@ -26,13 +26,14 @@ public class SwaggerSampleController {
         return "success";
     }
 
-    /*
+
+    @Deprecated
     @Operation(summary = "쿼리 스트링 예제", description = "쿼리 스트링 예제입니다.")
     @ApiResponses(value = @ApiResponse(responseCode = "200", description = "고정 값 success"))
     @GetMapping("/query")
     public String getQueryString(SwaggerGetParamVO param) {
         return "success";
-    }*/
+    }
 
     @Operation(summary = "쿼리 스트링 예제2", description = "쿼리 스트링 예제2 입니다.")
     @ApiResponses(value = @ApiResponse(responseCode = "200", description = "고정 값 success"))

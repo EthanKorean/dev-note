@@ -2,16 +2,6 @@ application:
   name: dev-note
   ver: 0.1
 
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-  info :
-    title: dev-note
-    description: 개발 기록용 서버
-    version: 1.0.0
-
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver

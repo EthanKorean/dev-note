@@ -1,4 +1,4 @@
-use crate::factory::character::Character;
+use super::character::Character;
 
 pub struct Mage {
     health: u32,

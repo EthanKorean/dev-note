@@ -3,5 +3,24 @@
 version = 3
 
 [[package]]
-name = "design-pattern"
+name = "app"
 version = "0.1.0"
+dependencies = [
+ "common",
+ "design",
+]
+
+[[package]]
+name = "character"
+version = "0.1.0"
+
+[[package]]
+name = "common"
+version = "0.1.0"
+
+[[package]]
+name = "design"
+version = "0.1.0"
+dependencies = [
+ "character",
+]

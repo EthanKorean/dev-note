@@ -1,0 +1,1 @@
+dir /s /b | findstr /v "target" > out.txt

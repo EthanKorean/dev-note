@@ -1,15 +1,17 @@
+use character::character::Character;
+use character::role::Role;   
 use crate::factory::character_factory::CharacterFactory;
-use super::{character::Character, role::Role};
 
-pub fn sample() {
+/**
+ * Factory 디자인으로 생성하는 예제
+ */
+pub fn init_character_by_fatory_design() {
     // Warrior 캐릭터 생성
     init_character( Role::Warrior);
 
     // Mage 캐릭터 생성
     let mut mage = init_character(Role::Mage);
     level_up_by_dynamic_dispatch(&mut * mage); 
-    
-    
 }
 
 fn init_character(role: Role) -> Box<dyn Character>{

@@ -7,15 +7,15 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug executable 'design-pattern'",
+            "name": "Debug executable 'app'",
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=design-pattern",
-                    "--package=design-pattern"
+                    "--bin=app",
+                    "--package=app"
                 ],
                 "filter": {
-                    "name": "design-pattern",
+                    "name": "app",
                     "kind": "bin"
                 }
             },
@@ -25,16 +25,16 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Debug unit tests in executable 'design-pattern'",
+            "name": "Debug unit tests in executable 'app'",
             "cargo": {
                 "args": [
                     "test",
                     "--no-run",
-                    "--bin=design-pattern",
-                    "--package=design-pattern"
+                    "--bin=app",
+                    "--package=app"
                 ],
                 "filter": {
-                    "name": "design-pattern",
+                    "name": "app",
                     "kind": "bin"
                 }
             },

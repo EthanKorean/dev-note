@@ -1,6 +1,8 @@
 [workspace]
+resolver = "1"
 members = [
     "app",
-    "character", "common",
+    "character",
+    "common",
     "design"
 ]

@@ -13,22 +13,22 @@
 - Garbage Collector 없이 메모리를 안전하게 관리 할 수 있도록 보장
 - 소유권의 규칙
     - 각 값은 소유자 하나만 가짐
-    - ```rust
+```rust
      fn main(){
         let x = String::from("Hello"); // x는 String 값을 소유
         println!("{}", x);             // 사용 가능
      }
-     ```
-    - 소유권을 벗어나면 메모리가 자동 해재
-    - 값을 다른 변수로 이동하면 원래 변수는 더이상 유효하지 않음
-    - ```rust
+```
+- 소유권을 벗어나면 메모리가 자동 해재
+- 값을 다른 변수로 이동하면 원래 변수는 더이상 유효하지 않음
+```rust
      fn main(){
         let s1 = String::from("hello");
         let s2 = s1; // 소유권 이동
         // println!("{}", s1); // s1은 더 이상 유효하지 않기 때문에 오류 발생, 
         println!("{}", s2);
      }
-     ```
+ ```
 - 소유자는 변수를 통해 값을 관리하지만, 모든 변수가 소유하지 않기 떄문에, 변수를 소유자라 할 수 없음
 
 ---
@@ -48,12 +48,15 @@ fn main() {
    //let _y3 = &mut x;   // 에러! 불변 참조와 가변 참조를 동시에 사용할 수 없음
    println!("_y1 = {}", _y1);
    println!("_y2 = {}", _y2);
-
-   let mut a = String::from("Hello");
-   let _z = &mut a;   // 가변 참조
-   //println!("x = {}", x); //에러! 가변 참조 중 원본에 접근 불가
-   println!("_z = {}", _z);
-   println!("x = {}", a);
+}
+```
+```rust
+fn main(){
+  let mut a = String::from("Hello");
+  let _z = &mut a;   // 가변 참조
+  //println!("x = {}", x); //에러! 가변 참조 중 원본에 접근 불가
+  println!("_z = {}", _z);
+  println!("x = {}", a);
 }
 ```
 

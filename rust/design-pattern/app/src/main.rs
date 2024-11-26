@@ -1,6 +1,6 @@
 
 use common::example::Example;
-use design::sample::init_character_by_factory_design;
+use design::sample::{init_character_by_factory_design, init_character_by_factory_method_design};
 
 fn main() {
 
@@ -13,6 +13,9 @@ fn main() {
     //Factory 디자인 패턴
     let _factory_design = init_character_by_factory_design();
     _factory_design.execute();
+
+    let _factory_method_design = init_character_by_factory_method_design();
+    _factory_method_design.execute();
 
 }
 

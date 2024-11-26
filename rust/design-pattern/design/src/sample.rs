@@ -2,7 +2,7 @@ use character::character::Character;
 use character::role::Role;   
 use common::example::Example;
 use crate::factory::character_factory::CharacterFactory;
-
+use crate::factory_method::character_factory::{CharacterFactoryByMethod, MageFactory, WarriorFactory};
 
 /**
  * Factory 디자인으로 생성하는 예제
@@ -16,7 +16,22 @@ pub fn init_character_by_factory_design() -> Example{
             let mut mage = init_character(Role::Mage);
             level_up_by_dynamic_dispatch(&mut * mage);
     }))
+}
 
+/**
+ * Factory Method 디자인으로 생성하는 예제
+ */
+pub fn init_character_by_factory_method_design()-> Example {
+    Example::new("factory method design",
+    Box::new(||{
+        let _warrior_factory = WarriorFactory;
+        let _warrior = _warrior_factory.generate_charactor();
+        _warrior.attack(); 
+
+        let _mage_factory = MageFactory;
+        let _mage = _mage_factory.generate_charactor();
+        _mage.attack(); 
+    }))
 }
 
 fn init_character(role: Role) -> Box<dyn Character>{
